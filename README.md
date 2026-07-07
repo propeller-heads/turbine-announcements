@@ -34,9 +34,26 @@ Add one line to the top of the `updates` list:
 - On `/updates` it shows under "New" for 14 days, then moves to "Past updates" by itself.
 - That's it — you never edit or delete it again.
 
+## Adding a "Learn more" link
+
+Any alert or update can carry a `link` — it renders as a "Learn more" link under the text:
+
+```json
+{
+    "date": "2026-07-07",
+    "title": "The $1M cap is gone",
+    "body": "There's no maximum swap size anymore.",
+    "link": "https://docs.turbine.exchange/trading/limits"
+}
+```
+
+Links must be on our own domains — `docs.turbine.exchange`, `app.turbine.exchange`, or any
+other `*.turbine.exchange` address. Anything else is silently ignored. Why: these notes render
+inside the app for every user, so if an author's GitHub account were ever compromised, off-site
+links would be a phishing weapon. Keeping links on our domains caps that risk.
+
 ## Good to know
 
-- `link` is optional on anything, but only `https://…turbine.exchange` links work — others are ignored.
 - Text only, no formatting.
 - A check runs on every PR and blocks typos in the file. Even if something bad slips through,
   the app skips broken entries instead of breaking.
