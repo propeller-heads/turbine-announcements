@@ -1,5 +1,12 @@
 [
     {
+        "id": "2026-07-XX-contract-upgrade",
+        "title": "Contract upgrade ahead",
+        "body": "We're deploying upgraded Turbine contracts soon. Open orders will be cancelled at deployment — funds are always safe, but you'll need to re-place orders afterwards.",
+        "startsAt": "2026-07-10T09:00:00Z",
+        "endsAt": "2026-07-12T12:00:00Z"
+    },
+    {
         "id": "2026-07-07-no-size-cap",
         "title": "The $1M cap is gone",
         "body": "There's no maximum swap size anymore. Turbine was built for large trades — now nothing stops you from making them.",
