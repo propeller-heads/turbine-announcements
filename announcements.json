@@ -1,8 +1,20 @@
 [
     {
-        "id": "2026-07-06-tiered-fees",
-        "title": "Smarter savings comparison",
-        "body": "The DEX cost comparison now uses pair-specific aggregator fees instead of a flat 15 bps.",
+        "id": "2026-07-07-no-size-cap",
+        "title": "The $1M cap is gone",
+        "body": "There's no maximum swap size anymore. Turbine was built for large trades — now nothing stops you from making them.",
+        "startsAt": "2026-07-07T13:00:00Z"
+    },
+    {
+        "id": "2026-07-07-fynd-execution",
+        "title": "Deeper liquidity through Fynd",
+        "body": "Orders now settle through Fynd's routing engine with wider protocol coverage — including Fluid and Ekubo — so large fills find the best price across more venues.",
+        "startsAt": "2026-07-07T13:00:00Z"
+    },
+    {
+        "id": "2026-07-06-swap-ui-upgrades",
+        "title": "Sharper swap UI",
+        "body": "Expand the DEX cost breakdown to see exactly what you'd pay elsewhere, pick fill windows from 3 minutes to 30 days, and get pair-specific fee comparisons instead of a flat 15 bps.",
         "startsAt": "2026-07-06T12:00:00Z"
     },
     {
