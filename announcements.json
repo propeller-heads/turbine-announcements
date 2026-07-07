@@ -30,5 +30,12 @@
         "body": "The new ⚡ stop fills your order in the very next batch. No waiting, no babysitting.",
         "startsAt": "2026-06-26T12:00:00Z",
         "endsAt": "2026-06-30T12:00:00Z"
+    },
+    {
+        "id": "2026-06-24-orders-survive-updates",
+        "title": "Orders survive updates",
+        "body": "Open orders now carry over across most Turbine updates instead of being cancelled. Only contract-level migrations still require re-placing orders — and we'll announce those here first.",
+        "startsAt": "2026-06-24T12:00:00Z",
+        "endsAt": "2026-06-28T12:00:00Z"
     }
 ]
