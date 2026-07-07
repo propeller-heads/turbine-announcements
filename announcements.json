@@ -1,7 +1,8 @@
 {
     "alert": {
         "id": "2026-07-contract-upgrade",
-        "text": "We're deploying upgraded Turbine contracts soon. Open orders will be cancelled at deployment — funds are always safe, but you'll need to re-place orders afterwards."
+        "text": "We're deploying upgraded Turbine contracts soon. Open orders will be cancelled at deployment — funds are always safe, but you'll need to re-place orders afterwards.",
+        "title": "New contracts coming"
     },
     "updates": [
         {

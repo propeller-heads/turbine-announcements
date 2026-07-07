@@ -1,32 +1,42 @@
 # Turbine Announcements
 
-Feeds the toast on [app.turbine.exchange](https://app.turbine.exchange)'s swap page and the
-`/updates` page. **Merging here is publishing** — live for all users in ~5–10 minutes, no deploy.
+This file controls what users see in [app.turbine.exchange](https://app.turbine.exchange):
+a small popup on the swap page, and the full list on the `/updates` page.
 
-## Two things you can do
+**Merging a change here publishes it.** Users see it within ~10 minutes. No deploy needed.
 
-### 1. Warn about contract changes
+## How to warn about a contract change (or maintenance)
 
-Set the `alert`. It toasts to every user until they dismiss it. Delete it when the event is over.
+Fill in the `alert` at the top of `announcements.json`:
 
 ```json
 "alert": {
     "id": "2026-07-contract-upgrade",
+    "title": "New contracts coming",
     "text": "We're deploying new contracts on July 20, 14:00 UTC. Open orders will be cancelled — funds are safe."
 }
 ```
 
-Keep the `id` stable while editing the text (dismissals key on it). Change the id if you need
-everyone to see it again. No contract changes coming? `"alert": null`.
+- Every user gets a popup with this until they close it. It also sits at the top of `/updates` under "Upcoming".
+- When the event is over, set `"alert": null`.
+- Fixing a typo? Keep the `id` the same, or everyone who closed the popup will see it again.
+- Want everyone to see it again on purpose? Give it a new `id`.
 
-### 2. Announce an update
+## How to announce something you shipped
 
-Prepend an entry to `updates`. Users who haven't seen it get a "New updates" toast once; the full
-list lives on `/updates`. Entries are permanent history — add and forget.
+Add one line to the top of the `updates` list:
 
 ```json
 { "date": "2026-07-07", "title": "The $1M cap is gone", "body": "There's no maximum swap size anymore." }
 ```
 
-`link` is optional on both and only renders for `https://*.turbine.exchange` URLs. Bodies are
-plain text. CI validates every change; the app also drops anything malformed rather than breaking.
+- Users who haven't seen it get one "New updates" popup.
+- On `/updates` it shows under "New" for 14 days, then moves to "Past updates" by itself.
+- That's it — you never edit or delete it again.
+
+## Good to know
+
+- `link` is optional on anything, but only `https://…turbine.exchange` links work — others are ignored.
+- Text only, no formatting.
+- A check runs on every PR and blocks typos in the file. Even if something bad slips through,
+  the app skips broken entries instead of breaking.

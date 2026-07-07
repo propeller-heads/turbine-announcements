@@ -21,6 +21,9 @@ if (feed.alert != null) {
             errors.push(`alert: missing required field "${field}"`);
         }
     }
+    if (feed.alert.title !== undefined && typeof feed.alert.title !== "string") {
+        errors.push("alert: \"title\" must be a string");
+    }
     checkLink(feed.alert.link, "alert");
 }
 
