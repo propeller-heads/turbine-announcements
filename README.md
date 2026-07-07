@@ -1,43 +1,32 @@
 # Turbine Announcements
 
-User-facing notes shown in [app.turbine.exchange](https://app.turbine.exchange): a toast on the
-swap page while a note is active, and the full history on `/announcements`. The app fetches
-`announcements.json` from this repo every few minutes — **merging here is publishing**. No deploy.
+Feeds the toast on [app.turbine.exchange](https://app.turbine.exchange)'s swap page and the
+`/updates` page. **Merging here is publishing** — live for all users in ~5–10 minutes, no deploy.
 
-## Post a note
+## Two things you can do
 
-1. Edit `announcements.json` (GitHub web UI is fine — press `.` or the pencil icon).
-2. Add an entry (template below), open a PR, get one approval, merge.
-3. Live for all users within ~5–10 minutes (raw CDN cache + app refetch).
+### 1. Warn about contract changes
+
+Set the `alert`. It toasts to every user until they dismiss it. Delete it when the event is over.
 
 ```json
-{
-    "id": "2026-07-20-contract-upgrade",
-    "title": "Contract upgrade July 20",
-    "body": "Orders will be cancelled during the upgrade. Funds are safe.",
-    "link": "https://docs.turbine.exchange/",
-    "startsAt": "2026-07-18T10:00:00Z",
-    "endsAt": "2026-07-22T12:00:00Z"
+"alert": {
+    "id": "2026-07-contract-upgrade",
+    "text": "We're deploying new contracts on July 20, 14:00 UTC. Open orders will be cancelled — funds are safe."
 }
 ```
 
-## Fields
+Keep the `id` stable while editing the text (dismissals key on it). Change the id if you need
+everyone to see it again. No contract changes coming? `"alert": null`.
 
-| Field | Required | Meaning |
-|---|---|---|
-| `id` | yes | Stable unique slug (`YYYY-MM-DD-topic`). Dismissals key on it — keep it unchanged when editing text; changing it re-shows the toast to everyone. |
-| `title` | yes | Card/toast heading. |
-| `body` | yes | Plain text (no markdown/HTML). |
-| `link` | no | "Learn more" target. Only `https://*.turbine.exchange` links render. |
-| `startsAt` | yes | ISO timestamp. Before it: listed under **Upcoming** (no toast). After it: **New** — toast on the swap page + badge on `/announcements`. |
-| `endsAt` | no | When the toast phase stops. Defaults to 14 days after `startsAt`. The note then moves to **Earlier** and stays in the history. |
+### 2. Announce an update
 
-## Rules
+Prepend an entry to `updates`. Users who haven't seen it get a "New updates" toast once; the full
+list lives on `/updates`. Entries are permanent history — add and forget.
 
-- A note travels Upcoming → New → Earlier from its dates alone — never edit a note to "retire" it.
-- Among simultaneously active notes, **file order decides which gets the toast**; put the most important first.
-- To announce a deploy: set `startsAt` a day or two *before* it and `endsAt` a day or two *after*,
-  so users are informed before and after the event.
-- Prune entries older than ~90 days occasionally; it's cosmetic, nothing depends on it.
-- CI validates every PR (`scripts/validate.mjs`) — a malformed entry can't merge, and the app
-  additionally drops invalid entries rather than breaking.
+```json
+{ "date": "2026-07-07", "title": "The $1M cap is gone", "body": "There's no maximum swap size anymore." }
+```
+
+`link` is optional on both and only renders for `https://*.turbine.exchange` URLs. Bodies are
+plain text. CI validates every change; the app also drops anything malformed rather than breaking.

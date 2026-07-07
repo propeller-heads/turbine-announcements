@@ -1,41 +1,33 @@
-[
-    {
-        "id": "2026-07-XX-contract-upgrade",
-        "title": "Contract upgrade ahead",
-        "body": "We're deploying upgraded Turbine contracts soon. Open orders will be cancelled at deployment — funds are always safe, but you'll need to re-place orders afterwards.",
-        "startsAt": "2026-07-07T15:00:00Z",
-        "endsAt": "2026-07-12T12:00:00Z"
+{
+    "alert": {
+        "id": "2026-07-contract-upgrade",
+        "text": "We're deploying upgraded Turbine contracts soon. Open orders will be cancelled at deployment — funds are always safe, but you'll need to re-place orders afterwards."
     },
-    {
-        "id": "2026-07-07-no-size-cap",
-        "title": "The $1M cap is gone",
-        "body": "There's no maximum swap size anymore. Turbine was built for large trades — now nothing stops you from making them.",
-        "startsAt": "2026-07-07T13:00:00Z"
-    },
-    {
-        "id": "2026-07-07-fynd-execution",
-        "title": "Deeper liquidity through Fynd",
-        "body": "Orders now settle through Fynd's routing engine with wider protocol coverage — including Fluid and Ekubo — so large fills find the best price across more venues.",
-        "startsAt": "2026-07-07T13:00:00Z"
-    },
-    {
-        "id": "2026-07-06-swap-ui-upgrades",
-        "title": "Sharper swap UI",
-        "body": "Expand the DEX cost breakdown to see exactly what you'd pay elsewhere, pick fill windows from 3 minutes to 30 days, and get pair-specific fee comparisons instead of a flat 15 bps.",
-        "startsAt": "2026-07-06T12:00:00Z"
-    },
-    {
-        "id": "2026-06-26-instant-orders",
-        "title": "Instant orders",
-        "body": "The new ⚡ stop fills your order in the very next batch. No waiting, no babysitting.",
-        "startsAt": "2026-06-26T12:00:00Z",
-        "endsAt": "2026-06-30T12:00:00Z"
-    },
-    {
-        "id": "2026-06-24-orders-survive-updates",
-        "title": "Orders survive updates",
-        "body": "Open orders now carry over across most Turbine updates instead of being cancelled. Only contract-level migrations still require re-placing orders — and we'll announce those here first.",
-        "startsAt": "2026-06-24T12:00:00Z",
-        "endsAt": "2026-06-28T12:00:00Z"
-    }
-]
+    "updates": [
+        {
+            "date": "2026-07-07",
+            "title": "The $1M cap is gone",
+            "body": "There's no maximum swap size anymore. Turbine was built for large trades — now nothing stops you from making them."
+        },
+        {
+            "date": "2026-07-07",
+            "title": "Deeper liquidity through Fynd",
+            "body": "Orders now settle through Fynd's routing engine with wider protocol coverage — including Fluid and Ekubo — so large fills find the best price across more venues."
+        },
+        {
+            "date": "2026-07-06",
+            "title": "Sharper swap UI",
+            "body": "Expand the DEX cost breakdown to see exactly what you'd pay elsewhere, pick fill windows from 3 minutes to 30 days, and get pair-specific fee comparisons instead of a flat 15 bps."
+        },
+        {
+            "date": "2026-06-26",
+            "title": "Instant orders",
+            "body": "The new ⚡ stop fills your order in the very next batch. No waiting, no babysitting."
+        },
+        {
+            "date": "2026-06-24",
+            "title": "Orders survive updates",
+            "body": "Open orders now carry over across most Turbine updates instead of being cancelled. Only contract-level migrations still require re-placing orders — and we'll announce those here first."
+        }
+    ]
+}
