@@ -1,7 +1,8 @@
 # Turbine Announcements
 
 This file controls what users see in [app.turbine.exchange](https://app.turbine.exchange):
-a small popup on the swap page, and the full list on the `/updates` page.
+a banner across the top of the app for alerts, a small "New updates" popup on the swap
+page, and the full list on the `/updates` page.
 
 **Merging a change here publishes it.** Users see it within ~10 minutes. No deploy needed.
 
@@ -17,9 +18,12 @@ Fill in the `alert` at the top of `announcements.json`:
 }
 ```
 
-- Every user gets a popup with this until they close it. It also sits at the top of `/updates` under "Upcoming".
+- Every user sees a banner under the app header with the **title only** — keep it short and
+  self-contained. The full `text` shows on `/updates` under "Announcements".
+- The banner stays until the user closes it or visits `/updates` (reading counts as
+  acknowledging).
 - When the event is over, set `"alert": null`.
-- Fixing a typo? Keep the `id` the same, or everyone who closed the popup will see it again.
+- Fixing a typo? Keep the `id` the same, or everyone who dismissed the banner will see it again.
 - Want everyone to see it again on purpose? Give it a new `id`.
 
 ## How to announce something you shipped
@@ -30,13 +34,17 @@ Add one line to the top of the `updates` list:
 { "date": "2026-07-07", "title": "The $1M cap is gone", "body": "There's no maximum swap size anymore." }
 ```
 
-- Users who haven't seen it get one "New updates" popup.
+- Users who haven't seen it get one "New updates" popup on the swap page, listing up to
+  three unread titles.
+- The popup clears when dismissed or when the user visits `/updates`.
 - On `/updates` it shows under "New" for 14 days, then moves to "Past updates" by itself.
 - That's it — you never edit or delete it again.
 
 ## Adding a "Learn more" link
 
-Any alert or update can carry a `link` — it renders as a "Learn more" link under the text:
+Any alert or update can carry a `link` — it renders as a "Learn more" link under the text
+on `/updates` (the banner shows only the title, so alert links appear there, not in the
+banner):
 
 ```json
 {

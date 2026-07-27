@@ -16,13 +16,12 @@ const checkLink = (link, at) => {
 };
 
 if (feed.alert != null) {
-    for (const field of ["id", "text"]) {
+    // The app's banner shows only the title, so it is required — an alert
+    // without one would render as a generic "Upcoming change".
+    for (const field of ["id", "title", "text"]) {
         if (typeof feed.alert[field] !== "string" || !feed.alert[field]) {
             errors.push(`alert: missing required field "${field}"`);
         }
-    }
-    if (feed.alert.title !== undefined && typeof feed.alert.title !== "string") {
-        errors.push("alert: \"title\" must be a string");
     }
     checkLink(feed.alert.link, "alert");
 }
