@@ -1,10 +1,22 @@
 {
-    "alert": {
-        "id": "2026-07-contract-upgrade",
-        "text": "We're deploying upgraded Turbine contracts soon. Open orders will be cancelled at deployment — funds are always safe, but you'll need to re-place orders afterwards.",
-        "title": "New contracts coming"
-    },
+    "alert": null,
     "updates": [
+        {
+            "date": "2026-07-29",
+            "title": "The leaderboard is live",
+            "body": "Every trade you settle counts toward your rank: weekly, monthly, and all time. See where you stand.",
+            "link": "https://app.turbine.exchange/leaderboard"
+        },
+        {
+            "date": "2026-07-29",
+            "title": "Flow graphs without holes",
+            "body": "The Explorer now decodes Fluid swaps and ETH wrapping on Uniswap v4, so the graph shows the whole route, not a gap where a hop should be."
+        },
+        {
+            "date": "2026-07-29",
+            "title": "See how your order settled",
+            "body": "Click a settlement in your order details and its token flow graph opens right there. No new tab, no hunting through the Explorer. One more click still takes you to the full view."
+        },
         {
             "date": "2026-07-07",
             "title": "The $1M cap is gone",
