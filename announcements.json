@@ -1,6 +1,26 @@
 {
-    "alert": null,
+    "alert": {
+        "id": "2026-08-04-contract-upgrade",
+        "title": "New contracts",
+        "text": "We deployed new contracts. Open orders were cancelled."
+    },
     "updates": [
+        {
+            "date": "2026-08-04",
+            "title": "Better routing",
+            "body": "Turbine can now route through more protocols and give you better prices. We use Tycho v3 router under the hood."
+        },
+        {
+            "date": "2026-08-04",
+            "title": "Security improvements",
+            "body": "We added more defense-in-depth mechanisms to prevent potential attacks. No funds were ever at risk."
+        },
+        {
+            "date": "2026-08-04",
+            "title": "Authenticate with EIP-712",
+            "body": "Easier programmatic interaction with Turbine. Instead of SIWE, you can now use EIP-712 signatures. Check out new API specs.",
+            "link": "https://api.turbine.exchange/api/swagger-ui/"
+        },
         {
             "date": "2026-07-29",
             "title": "The leaderboard is live",
