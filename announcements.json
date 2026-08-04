@@ -1,7 +1,7 @@
 {
     "alert": {
         "id": "2026-08-04-contract-upgrade",
-        "title": "New contracts",
+        "title": "New contracts: open orders cancelled",
         "text": "We deployed new contracts. Open orders were cancelled."
     },
     "updates": [
