@@ -2,6 +2,16 @@
     "alert": null,
     "updates": [
         {
+            "date": "2026-08-31",
+            "title": "Sell ETH for any token",
+            "body": "You can now sell ETH for any token Turbine supports. Before, ETH could only go to WETH. Turbine wraps your ETH into WETH as one step of the order, so you no longer have to do it yourself first."
+        },
+        {
+            "date": "2026-08-31",
+            "title": "See every signing step",
+            "body": "Placing an order now opens a modal that lists each wallet action before you start: sign in, wrap ETH, token allowance, and spending permit. Every step says what it is for, and if one fails you can retry from that step instead of starting the order again."
+        },
+        {
             "date": "2026-08-04",
             "title": "Better routing",
             "body": "Turbine can now route through more protocols and give you better prices. We use Tycho v3 router under the hood."
