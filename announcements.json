@@ -4,12 +4,12 @@
         {
             "date": "2026-08-31",
             "title": "Sell ETH for any token",
-            "body": "You can now sell ETH for any token Turbine supports. Before, ETH could only go to WETH. Turbine wraps your ETH into WETH as one step of the order, so you no longer have to do it yourself first."
+            "body": "You can now sell ETH for any token Turbine supports. Before, ETH could only go to WETH. The wrap is now part of placing the order: you sign one extra wallet transaction to turn your ETH into WETH, then the order goes through in the same flow."
         },
         {
             "date": "2026-08-31",
             "title": "See every signing step",
-            "body": "Placing an order now opens a modal that lists each wallet action before you start: sign in, wrap ETH, token allowance, and spending permit. Every step says what it is for, and if one fails you can retry from that step instead of starting the order again."
+            "body": "Placing an order now opens a modal showing every wallet action in the flow and where you are in it. Which steps appear depends on the order: signing in, wrapping ETH and granting a token allowance only show up when they are needed. Each step says what it is for, and if one fails you can retry that step instead of starting over."
         },
         {
             "date": "2026-08-04",
